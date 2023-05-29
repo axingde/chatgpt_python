@@ -21,12 +21,11 @@ def check_text(url, keyword):
         r = requests.get(url, timeout=10)
         # 判断响应文本是否包含关键字 
         if keyword in r.text:
-            print (r.text)
+            #print (r.text)
             if keywords in r.text:
-                print('1')
+                print("")
 
             else:
-                print(2)
                 with open('a.txt', 'a') as f:
                     f.write(url + '\n')
     except requests.exceptions.RequestException as e:
